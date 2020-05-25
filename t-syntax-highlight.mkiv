@@ -61,7 +61,8 @@
 \to\everysetupsyntaxhighlighting
 
 \def\syntaxhighlighting@id {syntaxhighlighting}
-\edef\t!syntaxhighlighting {\syntaxhighlighting@id}
+
+
 
 %D Helper macro
 
@@ -111,7 +112,7 @@
 \stoptexdefinition
 
 \starttexdefinition syntaxhighlighting@linenumbering_start
-   \doifinset{\externalfilterparameter\c!numbering}\syntaxhighlighting@yes
+   \doifinsetelse{\externalfilterparameter\c!numbering}\syntaxhighlighting@yes
        {\let\SYNBOL=\syntaxhighlighting_begin_number_lines
         \let\SYNEOL=\syntaxhighlighting_end_number_lines
         \startlinenumbering
@@ -122,24 +123,36 @@
                 \c!step=\externalfilterparameter{\c!number\c!step},
             \c!continue=\externalfilterparameter{\c!number\c!continue},
           ]}
-   \dostarttagged\t!syntaxhighlighting\colorscheme@name
+        {\let\SYNBOL=\syntaxhighlighting_begin_lines
+         \let\SYNEOL=\syntaxhighlighting_end_lines}
+   %\dostarttagged\t!syntaxhighlighting\colorscheme@name
 \stoptexdefinition
 
 \starttexdefinition syntaxhighlighting@linenumbering_stop
-  \dostoptagged
+  %\dostoptagged
    \doifinset{\externalfilterparameter\c!numbering}\syntaxhighlighting@yes
       {\stoplinenumbering}
 \stoptexdefinition
 
 \newcount\nofsyntaxhighlightinglines
 
+\starttexdefinition syntaxhighlighting_begin_lines
+  \startelement[\t!verbatimline]
+\stoptexdefinition
+
+\starttexdefinition syntaxhighlighting_end_lines
+  \stopelement
+\stoptexdefinition
+
 \starttexdefinition syntaxhighlighting_begin_number_lines
   \global\advance\nofsyntaxhighlightinglines\plusone
+  \startelement[\t!verbatimline][number=\the\nofsyntaxhighlightinglines]
   \attribute\verbatimlineattribute\nofsyntaxhighlightinglines
 \stoptexdefinition
 
 \starttexdefinition syntaxhighlighting_end_number_lines
-   \attribute\verbatimlineattribute\attributeunsetvalue
+  \attribute\verbatimlineattribute\attributeunsetvalue
+  \stopelement
 \stoptexdefinition
 
 

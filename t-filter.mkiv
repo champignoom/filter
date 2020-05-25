@@ -56,6 +56,7 @@
    \c!style=\v!yes,
    \s!parent=externalfilter]
 
+
 \appendtoks
     \externalfilter@show_status{defining filter : \currentexternalfilter}%
     \doifinset{\externalfilterparameter\c!cache}{\v!yes,\v!force}
@@ -66,6 +67,8 @@
     \setuevalue{process\currentexternalfilter file}{\externalfilter@process_file[\currentexternalfilter]}%
     \setuevalue{process\currentexternalfilter buffer}{\externalfilter@process_buffer[\currentexternalfilter]}%
     \setuevalue{inline\currentexternalfilter}{\externalfilter@inline[\currentexternalfilter]}%
+    \setelementbackendtag[\externalfilterparameter\c!taglabel]
+    \setelementnature    [\externalfilterparameter\c!taglabel][display]
 \to \everydefineexternalfilter
 
 % For backward compatibility
@@ -483,11 +486,11 @@
      {\externalfilterparameter\c!left}
 
    \begingroup
-   \dostarttagged{\externalfilterparameter\c!taglabel}\currentexternalfilter
+   \startelement[\externalfilterparameter\c!taglabel][detail=\currentexternalfilter]
    \useexternalfilterstyleandcolor\c!style\c!color
    \processcommacommand[\externalfilterparameter\c!setups]\directsetup
    \externalfilterparameter\c!readcommand\externalfilter@output_file
-   \dostoptagged
+   \stopelement
    \endgroup
 
    \doifelse{\externalfilterparameter\c!location}\v!paragraph

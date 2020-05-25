@@ -27,7 +27,9 @@
 \def\syntaxgroup@namespace   {@@@@\syntaxgroup@id}
 \def\syntaxgroup@name        {}
 
-\edef\t!syntaxgroup           {\syntaxgroup@id}
+\edef\t!syntaxgroup  {\syntaxgroup@id}
+\setelementbackendtag[\t!syntaxgroup]
+\setelementnature    [\t!syntaxgroup][inline]
 
 
 \installparameterhandler  \syntaxgroup@namespace \syntaxgroup@id
@@ -99,14 +101,14 @@
       \iftracesyntaxgroups
           \syntaxgroup@show_values
       \fi
-      \doifmode{\s!mkiv}{\dostarttagged\t!syntaxgroup{#1}}
+      \doifmode{\s!mkiv}{\startelement[\t!syntaxgroup][name=#1]}
       \syntaxgroupparameter\c!command
       {
         \externalfilter@attributes_start\syntaxgroup@id\c!style\c!color
             #2
         \externalfilter@attributes_stop
       }
-      \doifmode{\s!mkiv}{\dostoptagged}
+      \doifmode{\s!mkiv}{\stopelement}
       \syntaxgroupparameter\c!after
       \endgroup
 \stoptexdefinition
