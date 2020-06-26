@@ -24,5 +24,19 @@
     def foobar
         print("Hello World")
   \stopPYTHON
+
+  \startparagraph
+    Now with the line numbering on the right. Location of line numbering is
+    fixed per page, hence a page break here
+  \stopparagraph
+
+  \page
+
+  \setupvimtyping[PYTHON][numberlocation=right]
+  \startPYTHON[numbering=yes]
+    # Python program listing
+    def foobar
+        print("Hello World")
+  \stopPYTHON
 \stopsection
 \stoptext
