@@ -1,6 +1,6 @@
 %D \module
 %D   [     file=t-filter,
-%D      version=2020.06.23,
+%D      version=2020.06.28,
 %D        title=\CONTEXT\ User Module,
 %D     subtitle=Filter,
 %D       author=Aditya Mahajan,
@@ -9,7 +9,7 @@
 %D        email=adityam <at> ieee <dot> org,
 %D      license=Simplified BSD License]
 
-\writestatus{loading}{Filter (ver: 2020.06.23)}
+\writestatus{loading}{Filter (ver: 2020.06.28)}
 
 \startmodule [filter]
 \usemodule   [module-catcodes]
@@ -69,6 +69,8 @@
     \setuevalue{inline\currentexternalfilter}{\externalfilter@inline[\currentexternalfilter]}%
     \setelementbackendtag[\externalfilterparameter\c!taglabel]
     \setelementnature    [\externalfilterparameter\c!taglabel][display]
+    \setelementbackendtag[inline\externalfilterparameter\c!taglabel]
+    \setelementnature    [inline\externalfilterparameter\c!taglabel][inline]
 \to \everydefineexternalfilter
 
 % For backward compatibility
@@ -482,16 +484,17 @@
    \doifelse{\externalfilterparameter\c!location}\v!paragraph
      {\blank[\externalfilterparameter\c!spacebefore]
       \usealignparameter\externalfilterparameter
-      \externalfilterparameter\c!before}
-     {\externalfilterparameter\c!left}
+      \externalfilterparameter\c!before
+      \dostarttagged{\externalfilterparameter\c!taglabel}{\externalfilterparameter\c!tagdetail}}
+     {\externalfilterparameter\c!left
+      \dostarttagged{inline\externalfilterparameter\c!taglabel}{\externalfilterparameter\c!tagdetail}}
 
    \begingroup
-   \dostarttagged{\externalfilterparameter\c!taglabel}{\externalfilterparameter\c!tagdetail}
    \useexternalfilterstyleandcolor\c!style\c!color
    \processcommacommand[\externalfilterparameter\c!setups]\directsetup
    \externalfilterparameter\c!readcommand\externalfilter@output_file
-   \dostoptagged
    \endgroup
+   \dostoptagged
 
    \doifelse{\externalfilterparameter\c!location}\v!paragraph
      {\externalfilterparameter\c!after
