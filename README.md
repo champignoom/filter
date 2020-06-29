@@ -758,7 +758,7 @@ to get a chess board.
 XML export
 ----------
 
-The filter module provides a basic support for XML support. If the
+The filter module provides a basic support for XML export. If the
 user-document contains
 
     \setupbackend[export=yes]
