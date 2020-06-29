@@ -1,7 +1,7 @@
-\setupbackend[export=yes]
-%\setupexport[cssfile=41-export-templates.css]
-
 \usemodule[vim]
+
+\setupbackend[export=yes]
+\setupexport[cssfile=\vimtypingcssfile]
 
 \definevimtyping[PYTHON][syntax=python]
 
@@ -12,6 +12,7 @@
   \stopparagraph
   \startPYTHON
     # Python program listing
+    # TODO: Define a more elaborate function
     def foobar
         print("Hello World")
   \stopPYTHON

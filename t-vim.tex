@@ -50,10 +50,15 @@
 
 % Mode to testing the dev version of 2context script.
 \doifmodeelse{vim-dev,dev-vim}
-  {\def\vimtyping@script_name{2context.vim}}
+  {\def\vimtyping@script_name{2context.vim}%
+   \doifmode\s!mkiv{\def\vimtyping@css_name{vimtyping-default.css}}}
   {\doifmodeelse\s!mkiv
-      {\ctxlua{context.setvalue("vimtyping@script_name",resolvers.resolve("full:2context.vim"))}}
+      {\ctxlua{context.setvalue("vimtyping@script_name",resolvers.resolve("full:2context.vim"))}%
+      \ctxlua{context.setvalue("vimtyping@css_name",
+      resolvers.resolve("full:vimtyping-default.css"))}}
       {\def\vimtyping@script_name{kpse:2context.vim}}}
+
+\def\vimtypingcssfile{\vimtyping@css_name}
 
 \def\vimtyping@filter_command
   {\externalfilterparameter\c!vimcommand\space
@@ -265,7 +270,6 @@
         [\c!color={h=800000},
          \c!command=\vimtodoframed]
 
-
     \definesyntaxgroup
         [Error]
         [\c!color={h=c03000}]
@@ -274,11 +278,6 @@
         [Underlined]
         [\c!color={h=6a5acd},
          \c!command=\underbar]
-
-    \definesyntaxgroup
-        [Todo]
-        [\c!color={h=800000},
-         \c!command=\vimtodoframed]
 
     \setups{vim-minor-groups}
 

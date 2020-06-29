@@ -1,0 +1,157 @@
+/*
+ author  : Aditya Mahajan and Christoph Hintermüller,
+ license : Simplfied BSD License,
+ version : 2020.06.29
+*/
+
+/* TODO: 
+ * Inline environments
+ * Export of TODO has an extra space
+ * Line numbering in the margin
+ */
+
+vimtyping, 
+.vimtyping 
+{
+    font-family:monospace;
+    display:block;
+    white-space:pre;
+}
+
+vimtyping verbatimline,
+.vimtyping .verbatimline
+{
+    display:inline;
+    white-space:pre-wrap;
+}
+
+vimtyping[detail=pscolor]  syntaxgroup[defail=vimConstant],
+.vimtyping.pscolor .syntaxgroup.vimConstant,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimString],
+.vimtyping.pscolor .syntaxgroup.vimString,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimCharacter],
+.vimtyping.pscolor .syntaxgroup.vimCharacter,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimBoolean],
+.vimtyping.pscolor .syntaxgroup.vimBoolean,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimFloat],
+.vimtyping.pscolor .syntaxgroup.vimFloat
+{
+    color:#007068;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimNumber],
+.vimtyping.pscolor .syntaxgroup.vimNumber
+{
+    color:#907000;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimIdentifier],
+.vimtyping.pscolor .syntaxgroup.vimIdentifier,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimFunction],
+.vimtyping.pscolor .syntaxgroup.vimFunction
+{
+    color:#a030a0;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimStatement],
+.vimtyping.pscolor .syntaxgroup.vimStatement,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimCondition],
+.vimtyping.pscolor .syntaxgroup.vimCondition,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimRepeat],
+.vimtyping.pscolor .syntaxgroup.vimRepeat,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimLabel],
+.vimtyping.pscolor .syntaxgroup.vimLabel,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimOperator],
+.vimtyping.pscolor .syntaxgroup.vimOperator,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimKeyword],
+.vimtyping.pscolor .syntaxgroup.vimKeyword,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimException],
+.vimtyping.pscolor .syntaxgroup.vimException
+{
+    color:#2060a8;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimPreProc],
+.vimtyping.pscolor .syntaxgroup.vimPreProc,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimInclude],
+.vimtyping.pscolor .syntaxgroup.vimInclude,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimDefine],
+.vimtyping.pscolor .syntaxgroup.vimDefine,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimMacro],
+.vimtyping.pscolor .syntaxgroup.vimMacro,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimPreCondit],
+.vimtyping.pscolor .syntaxgroup.vimPreCondit
+{
+    color:#009030;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimType],
+.vimtyping.pscolor .syntaxgroup.vimType,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimStorageClass],
+.vimtyping.pscolor .syntaxgroup.vimStorageClass,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimStructure],
+.vimtyping.pscolor .syntaxgroup.vimStructure,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimTypedef],
+.vimtyping.pscolor .syntaxgroup.vimTypedef
+{
+    color:#0850a0;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimSpecial],
+.vimtyping.pscolor .syntaxgroup.vimSpecial,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimSpecialChar],
+.vimtyping.pscolor .syntaxgroup.vimSpecialChar,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimDelimiter],
+.vimtyping.pscolor .syntaxgroup.vimDelimiter,
+vimtyping[detail=pscolor] syntaxgroup[defail=vimDebug],
+.vimtyping.pscolor .syntaxgroup.vimDebug
+{
+    color:#907000;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimComment],
+.vimtyping.pscolor .syntaxgroup.vimComment,
+vimtyping[detail=pscolor]  syntaxgroup[defail=vimSpecialComment],
+.vimtyping.pscolor .syntaxgroup.vimSpecialComment
+{
+    color:#606000;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimIgnore],
+.vimtyping.pscolor .syntaxgroup.vimIgnore
+{
+    color:unset;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimTodo],
+.vimtyping.pscolor .syntaxgroup.vimTodo
+{
+    color:#800000;
+    background-color:#e0e090;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimError],
+.vimtyping.pscolor .syntaxgroup.vimError
+{
+    color:#c03000;
+    display:inline;
+}
+
+vimtyping[detail=pscolor] syntaxgroup[defail=vimUnderlined],
+.vimtyping.pscolor .syntaxgroup.vimUnderlined
+{
+    color:#6a5acd;
+    text-decoration:underline;
+    display:inline;
+}
+
