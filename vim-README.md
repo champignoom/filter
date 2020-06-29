@@ -984,7 +984,17 @@ contains
     \setupbackend[export=yes]
 
 or other valid options to `export` such as `export=xml`, then the vim typing
-environments are exported as well. The exported XML looks as follows:
+environments are exported as well. For example, 
+
+    \definevimtyping[PYTHON][syntax=python]
+    \startPYTHON
+    # Python program listing
+    def foobar
+        print("Hello World")
+    \stopPYTHON
+
+
+is exported as
 
     <vimtyping detail="pscolor">
      <verbatimline><syntaxgroup detail="vimComment"># Python program listing</syntaxgroup></verbatimline>
@@ -992,15 +1002,29 @@ environments are exported as well. The exported XML looks as follows:
      <verbatimline>    <syntaxgroup detail="vimFunction">print</syntaxgroup>(<syntaxgroup detail="vimString">"</syntaxgroup><syntaxgroup detail="vimString">Hello World</syntaxgroup><syntaxgroup detail="vimString">"</syntaxgroup>)</verbatimline>
     </vimtyping>
 
-The name of the exported envionment is `vimtyping`. The name of the syntax is
-not exported (since it is irrelevant for displaying the parsed output);
-instead the name of the colorscheme is exported as the parameter `detail` of
-`vimtyping`. Each line is exported as a `verbatimline`. Each syntaxgroup is
-exported as `<syntaxgroup detail="...">`. The value of `defail` equals to the
-name of the syntax highlighting group _prepended with `vim`_. The name is
-prepended with `vim` to avoid name clashes with other elements in the exported
-XML. Strictly speaking this is not necessary, but it does make it easier to
-write CSS selectors.
+The name of the exported envionment is `vimtyping`. 
+
+Inline environments such as
+
+    \definevimtyping[PYTHON][syntax=python]
+    \inlinePYTHON{print("Hello World")}
+    
+is exported as
+
+    <inlinevimtyping detail="pscolor"><verbatimline><syntaxgroup detail="vimFunction">print</syntaxgroup>(<syntaxgroup detail="vimString">"</syntaxgroup><syntaxgroup detail="vimString">Hello World</syntaxgroup><syntaxgroup detail="vimString">"</syntaxgroup>)</verbatimline></inlinevimtyping>
+
+The name of the exported envionment is `inlinevimtyping`. 
+
+In both the display and inline environments, the name of the programming
+language (value of the `syntax` key) is
+not exported since it is not needed to display the parse output.
+Instead the name of the colorscheme (value of the `alternative` key) is
+exported as the parameter `detail` of `vimtyping`. Each line is exported as a
+`verbatimline`. Each syntaxgroup is exported as `<syntaxgroup detail="...">`.
+The value of `defail` equals to the name of the syntax highlighting group
+_prepended with `vim`_. The name is prepended with `vim` to avoid name clashes
+with other elements in the exported XML. Strictly speaking this is not
+necessary, but it does make it easier to write CSS selectors.
 
 The module comes with a CSS file with default mappings for the two
 colorschemes that are provided with the module (`pscolor` and
