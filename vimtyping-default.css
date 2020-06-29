@@ -15,7 +15,7 @@ vimtyping,
 {
     font-family:monospace;
     display:block;
-    white-space:pre;
+    white-space:pre-wrap;
 }
 
 inlinevimtyping, 
@@ -23,7 +23,7 @@ inlinevimtyping,
 {
     font-family:monospace;
     display:inline;
-    white-space:pre;
+    white-space:pre-wrap;
 }
 
 
@@ -36,6 +36,15 @@ inlinevimtyping verbatimline,
     white-space:pre-wrap;
 }
 
+vimtyping syntaxgroup,
+inlinevimtyping syntaxgroup,
+.vimtyping .syntaxgroup,
+.inlinevimtyping .syntaxgroup
+{
+    display:inline;
+}
+
+/* `pscolor` color scheme */
 vimtyping[detail=pscolor]  syntaxgroup[defail=vimConstant],
 inlinevimtyping[detail=pscolor]  syntaxgroup[defail=vimConstant],
 .vimtyping.pscolor .syntaxgroup.vimConstant,
@@ -58,7 +67,6 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimFloat],
 .inlinevimtyping.pscolor .syntaxgroup.vimFloat
 {
     color:#007068;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimNumber],
@@ -67,7 +75,6 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimNumber],
 .inlinevimtyping.pscolor .syntaxgroup.vimNumber
 {
     color:#907000;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimIdentifier],
@@ -80,7 +87,6 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimFunction],
 .inlinevimtyping.pscolor .syntaxgroup.vimFunction
 {
     color:#a030a0;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimStatement],
@@ -113,7 +119,6 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimException],
 .inlinevimtyping.pscolor .syntaxgroup.vimException
 {
     color:#2060a8;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimPreProc],
@@ -138,7 +143,6 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimPreCondit],
 .inlinevimtyping.pscolor .syntaxgroup.vimPreCondit
 {
     color:#009030;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimType],
@@ -159,7 +163,6 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimTypedef],
 .inlinevimtyping.pscolor .syntaxgroup.vimTypedef
 {
     color:#0850a0;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimSpecial],
@@ -180,7 +183,6 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimDebug],
 .inlinevimtyping.pscolor .syntaxgroup.vimDebug
 {
     color:#907000;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimComment],
@@ -193,7 +195,6 @@ inlinevimtyping[detail=pscolor]  syntaxgroup[defail=vimSpecialComment],
 .inlinevimtyping.pscolor .syntaxgroup.vimSpecialComment
 {
     color:#606000;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimIgnore],
@@ -202,7 +203,6 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimIgnore],
 .inlinevimtyping.pscolor .syntaxgroup.vimIgnore
 {
     color:unset;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimTodo],
@@ -212,7 +212,6 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimTodo],
 {
     color:#800000;
     background-color:#e0e090;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimError],
@@ -221,7 +220,6 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimError],
 .inlinevimtyping.pscolor .syntaxgroup.vimError
 {
     color:#c03000;
-    display:inline;
 }
 
 vimtyping[detail=pscolor] syntaxgroup[defail=vimUnderlined],
@@ -231,6 +229,187 @@ inlinevimtyping[detail=pscolor] syntaxgroup[defail=vimUnderlined],
 {
     color:#6a5acd;
     text-decoration:underline;
-    display:inline;
+}
+
+/* `blackandwhite` color scheme */
+
+vimtyping[detail=blackandwhite]  syntaxgroup[defail=vimConstant],
+inlinevimtyping[detail=blackandwhite]  syntaxgroup[defail=vimConstant],
+.vimtyping.blackandwhite .syntaxgroup.vimConstant,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimConstant,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimString],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimString],
+.vimtyping.blackandwhite .syntaxgroup.vimString,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimString,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimCharacter],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimCharacter],
+.vimtyping.blackandwhite .syntaxgroup.vimCharacter,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimCharacter,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimBoolean],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimBoolean],
+.vimtyping.blackandwhite .syntaxgroup.vimBoolean,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimBoolean,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimFloat],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimFloat],
+.vimtyping.blackandwhite .syntaxgroup.vimFloat,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimFloat
+{
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimNumber],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimNumber],
+.vimtyping.blackandwhite .syntaxgroup.vimNumber,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimNumber
+{
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimIdentifier],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimIdentifier],
+.vimtyping.blackandwhite .syntaxgroup.vimIdentifier,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimIdentifier,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimFunction],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimFunction],
+.vimtyping.blackandwhite .syntaxgroup.vimFunction,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimFunction
+{
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimStatement],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimStatement],
+.vimtyping.blackandwhite .syntaxgroup.vimStatement,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimStatement,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimCondition],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimCondition],
+.vimtyping.blackandwhite .syntaxgroup.vimCondition,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimCondition,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimRepeat],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimRepeat],
+.vimtyping.blackandwhite .syntaxgroup.vimRepeat,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimRepeat,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimLabel],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimLabel],
+.vimtyping.blackandwhite .syntaxgroup.vimLabel,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimLabel,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimOperator],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimOperator],
+.vimtyping.blackandwhite .syntaxgroup.vimOperator,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimOperator,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimKeyword],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimKeyword],
+.vimtyping.blackandwhite .syntaxgroup.vimKeyword,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimKeyword,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimException],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimException],
+.vimtyping.blackandwhite .syntaxgroup.vimException,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimException
+{
+    font-weight:bold;
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimPreProc],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimPreProc],
+.vimtyping.blackandwhite .syntaxgroup.vimPreProc,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimPreProc,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimInclude],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimInclude],
+.vimtyping.blackandwhite .syntaxgroup.vimInclude,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimInclude,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimDefine],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimDefine],
+.vimtyping.blackandwhite .syntaxgroup.vimDefine,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimDefine,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimMacro],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimMacro],
+.vimtyping.blackandwhite .syntaxgroup.vimMacro,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimMacro,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimPreCondit],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimPreCondit],
+.vimtyping.blackandwhite .syntaxgroup.vimPreCondit,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimPreCondit
+{
+    font-weight:bold;
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimType],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimType],
+.vimtyping.blackandwhite .syntaxgroup.vimType,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimType,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimStorageClass],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimStorageClass],
+.vimtyping.blackandwhite .syntaxgroup.vimStorageClass,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimStorageClass,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimStructure],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimStructure],
+.vimtyping.blackandwhite .syntaxgroup.vimStructure,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimStructure,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimTypedef],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimTypedef],
+.vimtyping.blackandwhite .syntaxgroup.vimTypedef,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimTypedef
+{
+    font-weight:bold;
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimSpecial],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimSpecial],
+.vimtyping.blackandwhite .syntaxgroup.vimSpecial,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimSpecial,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimSpecialChar],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimSpecialChar],
+.vimtyping.blackandwhite .syntaxgroup.vimSpecialChar,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimSpecialChar,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimDelimiter],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimDelimiter],
+.vimtyping.blackandwhite .syntaxgroup.vimDelimiter,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimDelimiter,
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimDebug],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimDebug],
+.vimtyping.blackandwhite .syntaxgroup.vimDebug,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimDebug
+{
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimComment],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimComment],
+.vimtyping.blackandwhite .syntaxgroup.vimComment,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimComment,
+vimtyping[detail=blackandwhite]  syntaxgroup[defail=vimSpecialComment],
+inlinevimtyping[detail=blackandwhite]  syntaxgroup[defail=vimSpecialComment],
+.vimtyping.blackandwhite .syntaxgroup.vimSpecialComment,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimSpecialComment
+{
+    font-style:italic;
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimIgnore],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimIgnore],
+.vimtyping.blackandwhite .syntaxgroup.vimIgnore,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimIgnore
+{
+
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimTodo],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimTodo],
+.vimtyping.blackandwhite .syntaxgroup.vimTodo,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimTodo
+{
+    border:0.6px solid;
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimError],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimError],
+.vimtyping.blackandwhite .syntaxgroup.vimError,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimError
+{
+    text-decoration:line-through;
+}
+
+vimtyping[detail=blackandwhite] syntaxgroup[defail=vimUnderlined],
+inlinevimtyping[detail=blackandwhite] syntaxgroup[defail=vimUnderlined],
+.vimtyping.blackandwhite .syntaxgroup.vimUnderlined,
+.inlinevimtyping.blackandwhite .syntaxgroup.vimUnderlined
+{
+    text-decoration:underline;
 }
 
